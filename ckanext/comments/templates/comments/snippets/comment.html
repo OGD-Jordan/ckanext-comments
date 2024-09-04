@@ -6,12 +6,20 @@
     <div class="comment-heading">
         <div class="comment-authored">
             <div class="author-avatar">
-                {{ h.user_image(comment.author.name, size=26) }}
+                {% if comment.approved_anonymous %}
+                    {{ h.comments_annonymouse_image(size=26) }}
+                {% else %}
+                    {{ h.user_image(comment.author.name, size=26) }}
+                {% endif %}
             </div>
 
             <div class="comment-meta">
                 <div class="author-name">
-                    {{ comment.author.fullname or comment.author.name }}
+                    {% if comment.approved_anonymous %}
+                        {{ _("Anonymous User") }}
+                    {% else %}
+                        {{ comment.author.fullname or comment.author.name }}
+                    {% endif %}
                 </div>
                 <div class="comment-date">
                     {{ h.time_ago_from_timestamp(comment.modified_at or comment.created_at) }}
@@ -30,6 +38,10 @@
                     <i class="fa fa-check"></i>
                     <span class="text">{{ _('Approve') }}</span>
                 </button>
+                <button aria-label="approve comment" title="{{ _('Anonymous') }}" class="btn btn-success comment-action approve-comment-anonymous" data-id="{{ comment.id }}">
+                    <i class="fa fa-check"></i>
+                    <span class="text">{{ _('Anonymous') }}</span>
+                </button>
             {% endif %}
             {% if h.check_access('comments_comment_update', comment) %}
                 <button aria-label="edit comment" title="{{ _('Edit') }}" class="btn btn-default comment-action edit-comment" data-id="{{ comment.id }}">
@@ -42,13 +54,34 @@
                 </button>
             {% endif %}
 
-            {% if h.check_access('comments_comment_delete', comment) %}
-                <button aria-label="remove comment" type="button" class="btn btn-remove comment-action" data-toggle="modal" data-target="#confirmation-modal-{{ comment.id }}">
-                    <i class="fa fa-trash-o"></i>
-                    <span class="text">{{ _('Remove') }}</span>
+            {% if h.check_access('comments_comment_approve', comment) and comment.approved %}
+            
+                {% if comment.pinned %}
+                <button aria-label="pin comment" title="{{ _('Unpin') }}" class="btn btn-default comment-action unpin-comment" data-id="{{ comment.id }}">
+                    <i class="fa fa-pin"></i>
+                    <span class="text">{{ _('Unpin') }}</span>
                 </button>
-                {% snippet 'comments/snippets/confirmation.html', comment_id=comment.id %}
+                {% else %}
+                <button aria-label="pin comment" title="{{ _('Pin') }}" class="btn btn-default comment-action pin-comment" data-id="{{ comment.id }}">
+                    <i class="fa fa-pin"></i>
+                    <span class="text">{{ _('Pin') }}</span>
+                </button>
+                {% endif %}
+
+                {% if comment.hidden %}
+                <button aria-label="hide comment" title="{{ _('Unhide') }}" class="btn btn-default comment-action unhide-comment" data-id="{{ comment.id }}">
+                    <i class="fa fa-edit"></i>
+                    <span class="text">{{ _('Unhide') }}</span>
+                </button>
+                {% else %}
+                <button aria-label="hide comment" title="{{ _('Hide') }}" class="btn btn-default comment-action hide-comment" data-id="{{ comment.id }}">
+                    <i class="fa fa-edit"></i>
+                    <span class="text">{{ _('Hide') }}</span>
+                </button>
+                {% endif %}
+
             {% endif %}
+
         </div>
     </div>
     <div class="comment-body">

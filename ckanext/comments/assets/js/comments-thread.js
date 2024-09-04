@@ -13,9 +13,31 @@ ckan.module("comments-thread", function ($) {
         "click",
         this._onRemoveComment
       );
+      
+      this.$(".comment-actions .pin-comment").on(
+        "click",
+        this._onPinComment
+      );
+      this.$(".comment-actions .unpin-comment").on(
+        "click",
+        this._onUnpinComment
+      );
+      this.$(".comment-actions .hide-comment").on(
+        "click",
+        this._onHideComment
+      );
+      this.$(".comment-actions .unhide-comment").on(
+        "click",
+        this._onUnhideComment
+      );
+
       this.$(".comment-actions .approve-comment").on(
         "click",
         this._onApproveComment
+      );
+      this.$(".comment-actions .approve-comment-anonymous").on(
+        "click",
+        this._onApproveCommentAnonymous
       );
       this.$(".comment-actions .reply-to-comment").on(
         "click",
@@ -72,6 +94,87 @@ ckan.module("comments-thread", function ($) {
         }
       );
     },
+    
+    _onHideComment: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_hide",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+
+    _onUnhideComment: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_unhide",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+
+    _onPinComment: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_pin",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+
+    _onUnpinComment: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_unpin",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+
     _onApproveComment: function (e) {
       var id = e.currentTarget.dataset.id;
       var ajaxReload = this.options.ajaxReload;
@@ -79,6 +182,25 @@ ckan.module("comments-thread", function ($) {
       this.sandbox.client.call(
         "POST",
         "comments_comment_approve",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+    _onApproveCommentAnonymous: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_approve_anonymous",
         {
           id: id,
         },

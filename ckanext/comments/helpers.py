@@ -9,7 +9,8 @@ from ckanext.comments.model.thread import Subject
 
 from . import config
 from .model import Comment
-
+import ckan.lib.helpers as h
+_ = tk._
 _helpers = {}
 
 
@@ -68,3 +69,69 @@ def subject_of(id_: str) -> Optional[Subject]:
 @helper
 def enable_default_dataset_comments() -> bool:
     return config.use_default_dataset_comments()
+
+
+@helper
+def annonymouse_image(size: int = 26):
+    return h.snippet(
+            'user/snippets/placeholder.html',
+            size=size, user_name=_("Anonymous User"))
+
+
+@helper
+def comment_metatdata(comment):
+    return [
+        {
+            'label': _("Dataset"),
+            'value': comment['package']['display_name'],
+            'type': 'link',
+            'url': h.url_for('dataset.read', id=comment['package']['id']),
+        },
+        {
+            'label': _("Author"),
+            'value': comment['author']['fullname'] or comment['author']['name'],
+            'type': 'text',
+        },
+        {
+            'label': _("Government Entity"),
+            'value': comment['package']['organization']['display_name'],
+            'type': 'link',
+            'url': h.url_for('organization.read', id=comment['package']['organization']['id']),
+        },
+        {
+            'label': _("Status"),
+            'value': comment['state'],
+            'type': 'text',
+        },
+        {
+            'label': _("Hidden"),
+            'value': str(comment['hidden']),
+            'type': 'text',
+        },
+        {
+            'label': _("Pinned"),
+            'value': str(comment['pinned']),
+            'type': 'text',
+        },
+        {
+            'label': _("Content"),
+            'value': h.render_markdown(comment['content']),
+            'type': 'text',
+        },
+        {
+            'label': _("Date Created"),
+            'value': comment['created_at'],
+            'type': 'date',
+        }
+    ]
+
+
+@helper
+def entity_options():
+    context = {'user': tk.c.user}
+    data_dict = {'all_fields': True, 'limit':1000 }
+    orgs = tk.get_action('organization_list')(context, data_dict)
+    return [(_('Government Entity'), '')] + [
+        (h.truncate(org['display_name'], 25), org['id']) 
+        for org in orgs if org['state'] == 'active'
+        ]

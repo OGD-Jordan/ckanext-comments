@@ -1,0 +1,29 @@
+{% extends "snippets/search_form.html" %}
+
+{% block search_title %}
+{% if not no_title %}
+  <h2>{% snippet 'comments/snippets/comments_search_result_text.html', query=query, count=count %}</h2>
+{% endif %}
+{% endblock %}
+
+{% block search_sortby %}
+  {{ super() }}
+
+  {% if entity_options %}
+    <div class="form-group control-order-by">
+      <select id="field-organization_id" name="organization_id" class="form-control form-select">
+        {% for label, value in entity_options %}
+            <option value="{{ value }}"{% if entity_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+
+    </div>
+  {% endif %}
+
+{% endblock %}
+
+
+{% block search_input %}
+<h1>{{ _('Comments on datasets') }}</h1>
+{{ super() }}
+{% endblock %}

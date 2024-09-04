@@ -1,0 +1,114 @@
+{% import 'macros/autoform.html' as autoform %}
+{% extends "page.html" %}
+
+{% import 'macros/form.html' as form %}
+
+{% set comments_list_route = 'comments.index' %}
+{% set comments_read_route = 'comments.show' %}
+{% set comments_status_update_route = 'comments.status_update' %}
+
+
+
+{% block subtitle %}{{ _('Comments') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  {% if comment %}
+    {% set showcase = comment.content %}
+    <li>{% link_for _('Comments'), named_route=comments_list_route %}</li>
+    <li>{% link_for showcase|truncate(30), named_route=comments_read_route, id=comment.id %}</li>
+    <li class="active">{% link_for _('Status Update'), named_route=comments_status_update_route, id=comment.id %}</li>
+  {% else %}
+    <li>{% link_for _('Comments'), named_route=comments_list_route %}</li>
+    <li class="active"><a href="">{{ _('Comment Status Update') }}</a></li>
+  {% endif %}
+{% endblock %}
+
+{% block page_header %}
+  {{ super() }}
+{% endblock %}
+
+{% block content_action %}
+    {% link_for _('View'), named_route=comments_read_route, id=comment.id, class_='btn btn-default', icon='eye' %}
+{% endblock %}
+
+{% block content_primary_nav %}
+    {{ h.build_nav_icon(comments_status_update_route, _('Comment Status Update'), id=comment.id, icon='wrench') }}
+{% endblock %}
+
+
+{% block primary_content_inner %}
+
+<h1>{{ _('Update Comment Status') }}</h1>
+
+<form action="" method="post" class="module-content">
+  {{ h.csrf_input() if 'csrf_input' in h }}
+
+  {% block errors %}{{ form.errors(error_summary) }}{% endblock %}
+
+  <div class="form-group control-full">
+    <label class="form-label" for="field-created_at">Date created</label>
+    <div class="controls ">
+      <div id="field-created_at" type="text" name="created_at" placeholder="" disabled="disabled">
+        {{ h.snippet('snippets/local_friendly_datetime.html', datetime_obj=data.created_at) }}
+      </div>
+    </div>
+    </div>
+
+  {{ form.input('dataset', id='field-dataset', label=_('Dataset Name'), placeholder=_('Dataset Name'), value=data.package.display_name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  {{ form.input('author', id='field-author_id', label=_('Author'), placeholder=_('Author name'), value=comment.author.fullname or comment.author.name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  {{ form.input('organization', id='field-organization', label=_('Government Entity'), placeholder=_('Government Entity'), value=data.package.organization.display_name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  
+  
+  {{ form.select('state', id='field-state', label=_('Status'), options=[{'text': data.state, 'value': data.state}], selected=data.state, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  {{ form.select('hidden', id='field-hidden', label=_('Hidden'), options=[{'text': data.hidden, 'value': data.hidden}], selected=data.hidden, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  {{ form.select('pinned', id='field-pinned', label=_('Pinned'), options=[{'text': data.pinned, 'value': data.pinned}], selected=data.pinned, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  
+  {{ form.textarea('content', id='field-content', label=_('Content'), placeholder=_('Content'), value=data.content, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  
+  
+  {% block form_actions %}
+  <div class="form-actions">
+    {% block delete_button %}
+    {% endblock %}
+
+    {% block save_button %}
+    <a 
+      class="btn btn-secondary" 
+      href="{{ h.url_for(comments_list_route) }}">
+        {{ _('Back') }}
+    </a>
+
+    {% if comment.state != 'approved' %}
+      <button 
+        class="btn btn-primary" 
+        type="submit" 
+        name="status_update" 
+        value='approved'
+        >
+            {{ _('Approve') }}
+        </button>
+      {% endif %}
+
+    {% if comment.state != 'approved_anonymous' %}
+      <button 
+        class="btn btn-danger" 
+        type="submit" 
+        name="status_update" 
+        value='approved_anonymous'
+        >
+            {{ _('Approve Anonymous') }}
+        </button>
+      {% endif  %}
+
+
+
+    {% endblock %}
+  </div>
+  {% endblock %}
+</form>
+
+{% endblock %}
+
+{% block secondary_content %}
+  {% snippet "comments/snippets/helper.html" %}
+{% endblock %}
