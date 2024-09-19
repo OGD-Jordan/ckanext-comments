@@ -131,7 +131,18 @@ def entity_options():
     context = {'user': tk.c.user}
     data_dict = {'all_fields': True, 'limit':1000 }
     orgs = tk.get_action('organization_list')(context, data_dict)
-    return [(_('Government Entity'), '')] + [
+    return [(_('Select Entity'), '')] + [
         (h.truncate(org['display_name'], 25), org['id']) 
         for org in orgs if org['state'] == 'active'
+        ]
+
+
+@helper
+def status_options():
+    return [
+        {'text': ('Select State'), 'value': ''},
+        {'text': _('Pending'), 'value': 'draft'},
+        {'text': _('Approved'), 'value': 'approved'},
+        {'text': _('Approved Anonymous'), 'value': 'approved_anonymous'},
+        {'text': _('Rejected'), 'value': 'rejected'},
         ]

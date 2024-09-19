@@ -3,6 +3,11 @@
 
 {% set comments_list_route = 'comments.index' %}
 
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" href="/css/container2.css">
+{% endblock %}
+
 
 {% block subtitle %}{{ _("Comments") }}{% endblock %}
 
@@ -11,6 +16,8 @@
 {% endblock %}
 
 {% block page_primary_action %}
+  <h2>{{ _('Comments on datasets') }}</h2>
+  {% snippet 'comments/snippets/stats-indicators.html', statistics=comments_statistics %}
 {% endblock %}
 
 {% block form %}
@@ -26,6 +33,9 @@
     query=data_dict.q, 
     entity_selected=data_dict.organization_id, 
     entity_options=h.comments_entity_options(), 
+    status_options=h.comments_status_options(), 
+    status_selected= data_dict.state,
+    after_date=data_dict.after_date,
     sorting=sorting, 
     sorting_selected=selected_sorting, 
     count=count, 

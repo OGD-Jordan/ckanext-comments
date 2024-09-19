@@ -213,6 +213,12 @@ def comment_show(context, data_dict):
 def comment_approve(context, data_dict):
     tk.check_access("comments_comment_approve", context, data_dict)
     return patch_comment(context, data_dict, {'state': Comment.State.approved})
+
+@action
+@validate(schema.comment_approve)
+def comment_reject(context, data_dict):
+    tk.check_access("comments_comment_approve", context, data_dict)
+    return patch_comment(context, data_dict, {'state': Comment.State.rejected})
     
 
 @action
@@ -359,6 +365,7 @@ def comment_search(context, data_dict):
 
     if limit > -1:
         query = query.offset(offset * limit).limit(limit)    
+    context["include_author"] = True
 
     return {
         'total': search_count,

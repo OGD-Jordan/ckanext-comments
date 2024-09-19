@@ -2,12 +2,57 @@
 {% set comments_list_route = 'comments.index' %}
 {% set comment_status_update_route = 'comments.status_update' %}
 
-<li>
-    <a 
-    href="{{ h.url_for(comment_status_update_route, id=comment.id) }}"
-    >
-      {{ comment.content|truncate(80) }}
+<tr>
+  <th scope="row"><strong>{{h.render_datetime(comment.created_at, date_format='%d/%m/%Y')}}</strong></th>
+  <td>
+    <a href="{{ h.url_for('dataset.read', id=comment.package.id) }}">{{ comment.package.display_name }}</a>
+  </td>
+  <td> {{comment.author.fullname or comment.author.name}}</td>
+  <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
+  <td>
+    {% if comment.state != 'rejected' %}
+    <div class="d-flex flex-row comment-actions" style="gap:2px;"> 
+      {% if not comment.approved %}
+      <span style="cursor: pointer;" class="comment-action approve-comment" data-id="{{ comment.id }}">
+        <img src="/images/approved.png">  
+      </span>
 
-  </a>
-    
-  </li>
+      <span style="cursor: pointer;" class="comment-action reject-comment" data-id="{{ comment.id }}">
+        <img src="/images/reject.png"> 
+      </span>
+      {% endif %}
+
+      {% if comment.approved %}
+        {% if comment.hidden %}
+        <span style="cursor: pointer;" class="comment-action unhide-comment" data-id="{{ comment.id }}">
+          <!-- <img src="/images/DR1.png">  -->
+           UH
+        </span>
+        {% else %}
+        <span style="cursor: pointer;" class="comment-action hide-comment" data-id="{{ comment.id }}">
+          <!-- <img src="/images/DR1.png">  -->
+           H
+        </span>
+        {% endif %}
+
+        {% if comment.pinned %}
+        <span style="cursor: pointer;" class="comment-action unpin-comment" data-id="{{ comment.id }}">
+          <!-- <img src="/images/DR1.png">  -->
+           UP
+        </span>
+        {% else %}
+        <span style="cursor: pointer;" class="comment-action pin-comment" data-id="{{ comment.id }}">
+          <!-- <img src="/images/DR1.png">  -->
+           P
+        </span>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </td>
+  <td>
+    <a href="{{ h.url_for(comment_status_update_route, id=comment.id) }}">
+      {{_('More Details')}} 
+    </a>
+  </td>
+</tr>

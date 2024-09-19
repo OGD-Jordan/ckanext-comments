@@ -34,6 +34,7 @@ class Comment(Base):
         draft = "draft"
         approved = "approved"
         approved_anonymous = "approved_anonymous"
+        rejected = "rejected"
 
     id = Column(Text, primary_key=True, default=make_uuid)
 
@@ -219,7 +220,10 @@ class Comment(Base):
             query = query.filter(cls.author_id == author_id)
 
         if organization_id:
-            query = query.filter(cls.organization_id == organization_id)
+            query = cls.filter_by_organization(
+                    query,
+                    organization_id=organization_id
+                )
         
         total_count = query.count()
         

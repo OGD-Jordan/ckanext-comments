@@ -30,6 +30,10 @@ ckan.module("comments-thread", function ($) {
         "click",
         this._onUnhideComment
       );
+      this.$(".comment-actions .reject-comment").on(
+        "click",
+        this._onRejectComment
+      );
 
       this.$(".comment-actions .approve-comment").on(
         "click",
@@ -162,6 +166,25 @@ ckan.module("comments-thread", function ($) {
       this.sandbox.client.call(
         "POST",
         "comments_comment_unpin",
+        {
+          id: id,
+        },
+        function () {
+            if (ajaxReload) {
+                $(document).trigger("comments:changed");
+            } else {
+                window.location.reload();
+            }
+        }
+      );
+    },
+    _onRejectComment: function (e) {
+      var id = e.currentTarget.dataset.id;
+      var ajaxReload = this.options.ajaxReload;
+
+      this.sandbox.client.call(
+        "POST",
+        "comments_comment_reject",
         {
           id: id,
         },

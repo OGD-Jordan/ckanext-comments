@@ -37,5 +37,5 @@
 
 
 {% block secondary_content %}
-  {% snippet "comments/snippets/helper.html" %}
+  {% snippet "comments/snippets/user_info.html", user_info = comment.user_info, submitted_date=comment.created_at %}
 {% endblock %}

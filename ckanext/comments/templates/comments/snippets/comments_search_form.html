@@ -7,23 +7,18 @@
 {% endblock %}
 
 {% block search_sortby %}
-  {{ super() }}
+{% set after_date_formatted =  after_date.strftime('%Y-%m-%d') if after_date else '' %}
 
-  {% if entity_options %}
-    <div class="form-group control-order-by">
-      <select id="field-organization_id" name="organization_id" class="form-control form-select">
-        {% for label, value in entity_options %}
-            <option value="{{ value }}"{% if entity_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
-        {% endfor %}
-      </select>
-
-    </div>
-  {% endif %}
-
-{% endblock %}
+{% snippet 
+  'comments/snippets/advanced_filtering.html', 
+    entity_selected=entity_selected, 
+    entity_options=entity_options, 
+    status_options=status_options, 
+    status_selected= status_selected,
+    after_date=after_date,
+    sorting=sorting, 
+    sorting_selected=selected_sorting  
+  %}
 
 
-{% block search_input %}
-<h1>{{ _('Comments on datasets') }}</h1>
-{{ super() }}
 {% endblock %}

@@ -45,21 +45,12 @@
 
   {% block errors %}{{ form.errors(error_summary) }}{% endblock %}
 
-  <div class="form-group control-full">
-    <label class="form-label" for="field-created_at">Date created</label>
-    <div class="controls ">
-      <div id="field-created_at" type="text" name="created_at" placeholder="" disabled="disabled">
-        {{ h.snippet('snippets/local_friendly_datetime.html', datetime_obj=data.created_at) }}
-      </div>
-    </div>
-    </div>
-
   {{ form.input('dataset', id='field-dataset', label=_('Dataset Name'), placeholder=_('Dataset Name'), value=data.package.display_name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   {{ form.input('author', id='field-author_id', label=_('Author'), placeholder=_('Author name'), value=comment.author.fullname or comment.author.name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   {{ form.input('organization', id='field-organization', label=_('Government Entity'), placeholder=_('Government Entity'), value=data.package.organization.display_name, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   
   
-  {{ form.select('state', id='field-state', label=_('Status'), options=[{'text': data.state, 'value': data.state}], selected=data.state, classes=["control-full"], attrs={"disabled": "disabled"}) }}
+  {{ form.select('state', id='field-state', label=_('Status'), options=h.comments_status_options(), selected=data.state, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   {{ form.select('hidden', id='field-hidden', label=_('Hidden'), options=[{'text': data.hidden, 'value': data.hidden}], selected=data.hidden, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   {{ form.select('pinned', id='field-pinned', label=_('Pinned'), options=[{'text': data.pinned, 'value': data.pinned}], selected=data.pinned, classes=["control-full"], attrs={"disabled": "disabled"}) }}
   
@@ -110,5 +101,5 @@
 {% endblock %}
 
 {% block secondary_content %}
-  {% snippet "comments/snippets/helper.html" %}
+  {% snippet "comments/snippets/user_info.html", user_info = comment.user_info, submitted_date=comment.created_at %}
 {% endblock %}

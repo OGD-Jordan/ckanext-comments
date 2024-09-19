@@ -56,6 +56,9 @@ def index():
     limit = data_dict.get('limit', 20)
     results = tk.get_action('comments_comment_search')(
         context, {**data_dict, 'sort':sort, 'limit': limit,})
+    
+    comments_statistics = tk.get_action('comments_generate_statistics')(
+        context, {**data_dict})
 
     params_nopage = [
         (k, v) for k, v in request.args.items(multi=True)
@@ -76,6 +79,7 @@ def index():
     return base.render(u'comments/search.html',
         extra_vars={
             "comments": results.get('items'),
+            "comments_statistics": comments_statistics,
             "count": results.get('total'),
             u'errors': errors,
             'data_dict': data_dict,

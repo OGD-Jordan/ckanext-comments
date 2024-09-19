@@ -93,7 +93,7 @@ def comments_search_schema(
         'page': [ignore_empty, natural_number_validator],
         'limit': [ignore_empty, int_validator],
         'sort': [ignore_missing, unicode_safe],
-        'state': [ignore_missing, tk.get_validator("comments_valid_state") ],
+        'state': [ignore_missing, unicode_safe, tk.get_validator("comments_valid_state") ],
         'organization_id': [
             ignore_missing, unicode_safe,
             tk.get_validator("comments_valid_organization")

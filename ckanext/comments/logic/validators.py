@@ -41,6 +41,8 @@ def valid_organization(organization_id, context):
 @validator
 def valid_state(value):
     valid_states = {v for k, v in vars(Comment.State).items() if not k.startswith('_')}
+    if not value:
+        return ''
 
     if value not in valid_states:
         raise tk.Invalid(_(f"Invalid state: {value}."))
