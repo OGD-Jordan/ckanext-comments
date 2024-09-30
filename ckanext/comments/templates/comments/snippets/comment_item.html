@@ -24,21 +24,21 @@
 
       {% if comment.approved %}
         {% if comment.hidden %}
-        <span style="cursor: pointer;" class="comment-action unhide-comment" data-id="{{ comment.id }}">
+        <span title="{{ _('unhide comment') }}" style="cursor: pointer;" class="comment-action unhide-comment" data-id="{{ comment.id }}">
           <img src="/images/view_icon.png"> 
         </span>
         {% else %}
-        <span style="cursor: pointer;" class="comment-action hide-comment" data-id="{{ comment.id }}">
+        <span title="{{ _('hide comment') }}" style="cursor: pointer;" class="comment-action hide-comment" data-id="{{ comment.id }}">
           <img src="/images/hide_icon.png"> 
         </span>
         {% endif %}
 
         {% if comment.pinned %}
-        <span style="cursor: pointer;" class="comment-action unpin-comment" data-id="{{ comment.id }}">
+        <span title="{{ _('unpin comment') }}" style="cursor: pointer;" class="comment-action unpin-comment" data-id="{{ comment.id }}">
           <img src="/images/unpin_icon.png"> 
         </span>
         {% else %}
-        <span style="cursor: pointer;" class="comment-action pin-comment" data-id="{{ comment.id }}">
+        <span title="{{ _('pin comment') }}" style="cursor: pointer;" class="comment-action pin-comment" data-id="{{ comment.id }}">
           <img src="/images/pin_icon.png"> 
         </span>
         {% endif %}
