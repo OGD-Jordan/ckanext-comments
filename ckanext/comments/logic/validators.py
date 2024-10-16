@@ -45,7 +45,7 @@ def valid_state(value):
         return ''
 
     if value not in valid_states:
-        raise tk.Invalid(_(f"Invalid state: {value}."))
+        raise tk.Invalid(_("Invalid state: %s." % value))
     return value
 
 @validator

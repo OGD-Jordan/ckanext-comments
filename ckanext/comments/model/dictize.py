@@ -132,7 +132,7 @@ def comment_dictize(obj: Comment, context: Any, **extra: Any) -> dict[str, Any]:
         author = obj.get_author()
         if author:
             extra["author"] = get_dictizer(type(author))(author, context.copy())
-            extra["user_info"] = tk.get_action('user_management_show')(context, {'id':author.id})
+            extra["user_info"] = tk.get_action('user_management_show')({**context, 'ignore_auth':True}, {'id':author.id})
         else:
             log.error("Missing author for comment: %s", obj)
             extra["author"] = None

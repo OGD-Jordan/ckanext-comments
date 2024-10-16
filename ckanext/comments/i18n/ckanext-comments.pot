@@ -1,0 +1,430 @@
+# Translations template for ckanext-comments.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the ckanext-comments
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-comments 0.3.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-10-13 11:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ckanext/comments/helpers.py:78
+#: ckanext/comments/templates/comments/snippets/comment.html:19
+msgid "Anonymous User"
+msgstr ""
+
+#: ckanext/comments/helpers.py:85
+#: ckanext/comments/templates/comments/snippets/list.html:9
+msgid "Dataset"
+msgstr ""
+
+#: ckanext/comments/helpers.py:91 ckanext/comments/templates/comments/edit.html:49
+msgid "Author"
+msgstr ""
+
+#: ckanext/comments/helpers.py:96 ckanext/comments/templates/comments/edit.html:50
+msgid "Government Entity"
+msgstr ""
+
+#: ckanext/comments/helpers.py:102 ckanext/comments/templates/comments/edit.html:53
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:71
+msgid "Status"
+msgstr ""
+
+#: ckanext/comments/helpers.py:107 ckanext/comments/templates/comments/edit.html:54
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:54
+msgid "Hidden"
+msgstr ""
+
+#: ckanext/comments/helpers.py:112 ckanext/comments/templates/comments/edit.html:55
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:65
+msgid "Pinned"
+msgstr ""
+
+#: ckanext/comments/helpers.py:117 ckanext/comments/templates/comments/edit.html:57
+#: ckanext/comments/templates/comments/snippets/comment_form.html:10
+msgid "Content"
+msgstr ""
+
+#: ckanext/comments/helpers.py:122
+msgid "Date Created"
+msgstr ""
+
+#: ckanext/comments/helpers.py:134
+msgid "Select Entity"
+msgstr ""
+
+#: ckanext/comments/helpers.py:144
+msgid "Pending"
+msgstr ""
+
+#: ckanext/comments/helpers.py:145
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:39
+msgid "Approved"
+msgstr ""
+
+#: ckanext/comments/helpers.py:146
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:27
+msgid "Approved Anonymous"
+msgstr ""
+
+#: ckanext/comments/helpers.py:147
+msgid "Rejected"
+msgstr ""
+
+#: ckanext/comments/utils.py:60 ckanext/comments/utils.py:76
+msgid "User not authorized to see the comments"
+msgstr ""
+
+#: ckanext/comments/logic/action.py:204 ckanext/comments/logic/action.py:240
+#: ckanext/comments/logic/action.py:297 ckanext/comments/logic/action.py:326
+#: ckanext/comments/utils.py:80 ckanext/comments/utils.py:96
+msgid "Comment not found"
+msgstr ""
+
+#: ckanext/comments/utils.py:98
+msgid "Unauthorized to view Comment"
+msgstr ""
+
+#: ckanext/comments/assets/js/comments-thread.js:254
+#: ckanext/comments/templates/comments/snippets/comment.html:31
+#: ckanext/comments/templates/comments/snippets/comment.html:33
+msgid "Reply"
+msgstr ""
+
+#: ckanext/comments/assets/js/comments-thread.js:257
+#: ckanext/comments/templates/comments/snippets/confirmation.html:21
+msgid "Cancel"
+msgstr ""
+
+#: ckanext/comments/assets/js/comments-thread.js:322
+msgid "An Error Occurred"
+msgstr ""
+
+#: ckanext/comments/assets/js/comments-thread.js:323
+msgid "Comment cannot be updated"
+msgstr ""
+
+#: ckanext/comments/logic/action.py:173
+msgid "Cannot find author for comment"
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:27
+msgid "Comment does not exist"
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:37
+#, python-format
+msgid "%s: %s with id: %s"
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:37
+msgid "Not found"
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:37
+msgid "Organization"
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:48
+#, python-format
+msgid "Invalid state: %s."
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:57
+msgid "Invalid user id."
+msgstr ""
+
+#: ckanext/comments/logic/validators.py:63
+msgid "User not authorized filter comments based on author."
+msgstr ""
+
+#: ckanext/comments/templates/comments/detail.html:8
+#: ckanext/comments/templates/comments/detail.html:11
+#: ckanext/comments/templates/comments/edit.html:12
+#: ckanext/comments/templates/comments/edit.html:17
+#: ckanext/comments/templates/comments/edit.html:21
+#: ckanext/comments/templates/comments/edit_base.html:10
+#: ckanext/comments/templates/comments/edit_base.html:18
+#: ckanext/comments/templates/comments/edit_base.html:22
+#: ckanext/comments/templates/comments/search.html:12
+#: ckanext/comments/templates/comments/search.html:15
+#: ckanext/comments/templates/comments/snippets/thread.html:15
+msgid "Comments"
+msgstr ""
+
+#: ckanext/comments/templates/comments/detail.html:20
+msgid "Manage"
+msgstr ""
+
+#: ckanext/comments/templates/comments/detail.html:25
+msgid "Comment Details"
+msgstr ""
+
+#: ckanext/comments/templates/comments/detail.html:30
+#: ckanext/comments/templates/comments/snippets/list.html:11
+msgid "Comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/detail.html:35
+msgid "Comment info"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:19
+msgid "Status Update"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:22
+#: ckanext/comments/templates/comments/edit.html:35
+msgid "Comment Status Update"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:31
+msgid "View"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:41
+msgid "Update Comment Status"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:48
+msgid "Dataset Name"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:49
+msgid "Author name"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:69
+msgid "Back"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:79
+#: ckanext/comments/templates/comments/snippets/comment.html:37
+#: ckanext/comments/templates/comments/snippets/comment.html:39
+msgid "Approve"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:90
+msgid "Approve Anonymous"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit_base.html:20
+#: ckanext/comments/templates/comments/snippets/comment.html:47
+#: ckanext/comments/templates/comments/snippets/comment.html:49
+msgid "Edit"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit_base.html:23
+#: ckanext/comments/templates/comments/edit_base.html:42
+msgid "Update Status"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit_base.html:36
+msgid "View Comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/search.html:19
+msgid "Comments on datasets"
+msgstr ""
+
+#: ckanext/comments/templates/comments/search.html:25
+msgid "Last Created"
+msgstr ""
+
+#: ckanext/comments/templates/comments/search.html:26
+msgid "Comment Ascending"
+msgstr ""
+
+#: ckanext/comments/templates/comments/search.html:27
+msgid "Comment Descending"
+msgstr ""
+
+#: ckanext/comments/templates/comments/search.html:32
+msgid "Search comments..."
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:5
+msgid "Filter By"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:12
+msgid "Clear Status"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:16
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:30
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:44
+#: ckanext/comments/templates/comments/snippets/confirmation.html:22
+#: ckanext/comments/templates/comments/snippets/confirmation.html:23
+msgid "Remove"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:27
+msgid "Clear Date"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:41
+msgid "Clear Entity"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:57
+msgid "Clear Filters"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:92
+msgid "After Date"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:108
+msgid "Entity"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/advanced_filtering.html:130
+msgid "Order By"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:41
+#: ckanext/comments/templates/comments/snippets/comment.html:43
+msgid "Anonymous"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:51
+#: ckanext/comments/templates/comments/snippets/comment.html:53
+#: ckanext/comments/templates/comments/snippets/comment_form.html:15
+msgid "Save"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:60
+#: ckanext/comments/templates/comments/snippets/comment.html:62
+msgid "Unpin"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:65
+#: ckanext/comments/templates/comments/snippets/comment.html:67
+msgid "Pin"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:72
+#: ckanext/comments/templates/comments/snippets/comment.html:74
+msgid "Unhide"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment.html:77
+#: ckanext/comments/templates/comments/snippets/comment.html:79
+msgid "Hide"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_form.html:9
+msgid "Leave a comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:27
+msgid "unhide comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:31
+msgid "hide comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:37
+msgid "unpin comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:41
+msgid "pin comment"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:51
+msgid "More Details"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:2
+msgid "{number} comment found for '{query}'"
+msgid_plural "{number} comments found for '{query}'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:3
+msgid "No comments found for '{query}'"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:4
+msgid "{number} comment found"
+msgid_plural "{number} comments found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:5
+msgid "No comments found"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/confirmation.html:12
+msgid "Confirmation window"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/confirmation.html:18
+msgid "Are you sure you want to permanently delete this comment?"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/helper.html:4
+msgid "What are Comments?"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/helper.html:8
+msgid ""
+"The commenting feature allows users to engage with dataset publishers and the"
+" community by sharing feedback, suggestions, or questions directly on dataset"
+" pages. Whether you want to clarify dataset details, highlight potential "
+"improvements, or discuss usage scenarios, this feature provides a space for "
+"collaborative discussions. Comments help enhance dataset quality and ensure "
+"the information is as useful and relevant as possible. Start a conversation "
+"and contribute to the ongoing improvement of open data."
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/list.html:8
+msgid "Date"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/list.html:10
+msgid "User"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/list.html:12
+msgid "Actions"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/list.html:35
+msgid "View All"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:6
+msgid "Total"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:16
+msgid "Draft/Pending"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/stats-indicators.html:49
+msgid "Statistics According To Internal Actions"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/user_info.html:4
+msgid "User Information"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/user_info.html:12
+msgid "Submitted on"
+msgstr ""
+

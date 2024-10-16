@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from typing import Any, Callable, Optional
 
-from sqlalchemy import Column, DateTime, ForeignKey, Text, Boolean, or_, func
+from sqlalchemy import Column, DateTime, ForeignKey, Text, Boolean, or_, func, case
 from sqlalchemy.dialects.postgresql import JSONB
 
 from sqlalchemy.orm import foreign, relationship
@@ -251,11 +251,45 @@ class Comment(Base):
         pin_dict = {pinned: count for pinned, count in pin_breakdown}
         
 
+        # Breakdown by Packages
+        # package_comment_breakdown = Session.query(
+        #     func.count(case([(Comment.id == None, 1)], else_=None)).label('no_comments'),
+        #     func.count(case([(Comment.id != None, 1)], else_=None)).label('with_comments')
+        # ).outerjoin(Thread, (Thread.subject_id == model.Package.id) & (Thread.subject_type == 'package')) \
+        # .outerjoin(Comment, Thread.id == Comment.thread_id) \
+        # .one()
+
+        # package_comment_breakdown = {
+        #     'no_comments': package_comment_breakdown.no_comments,
+        #     'with_comments': package_comment_breakdown.with_comments
+        # }
+
+        with_comments = Session.query(model.Package) \
+            .filter(model.Package.type == 'dataset')\
+            .filter(model.Package.state == 'active')\
+            .join(Thread, (Thread.subject_id == model.Package.id) & (Thread.subject_type == 'package')) \
+            .join(Comment, Thread.id == Comment.thread_id) \
+            .distinct().count()
+        
+        no_comments = Session.query(model.Package) \
+            .filter(model.Package.type == 'dataset')\
+            .filter(model.Package.state == 'active')\
+            .outerjoin(Thread, (Thread.subject_id == model.Package.id) & (Thread.subject_type == 'package')) \
+            .outerjoin(Comment, Thread.id == Comment.thread_id) \
+            .filter(Comment.id == None) \
+            .count()
+        
+        package_comment_breakdown = {
+            'no_comments': no_comments,
+            'with_comments': with_comments
+        }
+
         statistics = {
             'total': total_count,
             'state_breakdown': status_dict,
             'hide_breakdown': hide_dict,
             'pin_breakdown': pin_dict,
+            'package_comment_breakdown': package_comment_breakdown
         }
         
         return statistics

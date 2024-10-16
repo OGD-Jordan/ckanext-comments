@@ -146,3 +146,12 @@ def status_options():
         {'text': _('Approved Anonymous'), 'value': 'approved_anonymous'},
         {'text': _('Rejected'), 'value': 'rejected'},
         ]
+
+@helper
+def status_dict():
+    return {
+        'draft': _('Pending'),
+        'approved': _('Approved'),
+        'approved_anonymous': _('Approved Anonymous'),
+        'rejected': _('Rejected')
+    }

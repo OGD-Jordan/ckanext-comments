@@ -117,5 +117,5 @@ def comment_update(context, data_dict):
 @auth
 def comment_list(context, data_dict):
     return {
-        'success': not authz.auth_is_anon_user(context)
+        'success': not authz.auth_not_logged_in(context)
     }

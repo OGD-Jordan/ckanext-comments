@@ -29,7 +29,7 @@ def get_organization_id_for_user(context):
     user = context.get('user')
     user_obj = model.User.get(user)
 
-    if authz.auth_is_anon_user(context):  return None
+    if authz.auth_not_logged_in(context):  return None
     
     results = model.Session.query(model.Group) \
         .filter(model.Group.type == 'organization') \
@@ -37,7 +37,10 @@ def get_organization_id_for_user(context):
         .join(model.Member, model.Group.id == model.Member.group_id) \
         .filter(model.Member.table_id == user_obj.id)
     
-    return None if not results else results.first().id
+    if results and results.first():
+        return results.first().id
+    else:
+        return None
 
 
 

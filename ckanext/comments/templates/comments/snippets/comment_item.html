@@ -1,6 +1,7 @@
 {% set lang = h.lang() %}
 {% set comments_list_route = 'comments.index' %}
 {% set comment_status_update_route = 'comments.status_update' %}
+{% set STATUS_DICT = h.comments_status_dict() %}
 
 <tr>
   <th scope="row"><strong>{{h.render_datetime(comment.created_at, date_format='%d/%m/%Y')}}</strong></th>
@@ -9,6 +10,7 @@
   </td>
   <td> {{comment.author.fullname or comment.author.name}}</td>
   <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
+  <td> {{ STATUS_DICT[comment.state] }}</td>
   <td>
     {% if comment.state != 'rejected' %}
     <div class="d-flex flex-row comment-actions" style="gap:2px;"> 
