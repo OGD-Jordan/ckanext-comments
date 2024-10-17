@@ -12,40 +12,42 @@
   <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
   <td> {{ STATUS_DICT[comment.state] }}</td>
   <td>
-    {% if comment.state != 'rejected' %}
-    <div class="d-flex flex-row comment-actions" style="gap:2px;"> 
-      {% if not comment.approved %}
-      <span style="cursor: pointer;" class="comment-action approve-comment" data-id="{{ comment.id }}">
-        <img src="/images/approved.png">  
-      </span>
-
-      <span style="cursor: pointer;" class="comment-action reject-comment" data-id="{{ comment.id }}">
-        <img src="/images/reject.png"> 
-      </span>
-      {% endif %}
-
-      {% if comment.approved %}
-        {% if comment.hidden %}
-        <span title="{{ _('unhide comment') }}" style="cursor: pointer;" class="comment-action unhide-comment" data-id="{{ comment.id }}">
-          <img src="/images/view_icon.png"> 
+    {% if h.check_access('comments_comment_approve') %}
+      {% if comment.state != 'rejected' %}
+      <div class="d-flex flex-row comment-actions" style="gap:2px;"> 
+        {% if not comment.approved %}
+        <span style="cursor: pointer;" class="comment-action approve-comment" data-id="{{ comment.id }}">
+          <img src="/images/approved.png">  
         </span>
-        {% else %}
-        <span title="{{ _('hide comment') }}" style="cursor: pointer;" class="comment-action hide-comment" data-id="{{ comment.id }}">
-          <img src="/images/hide_icon.png"> 
+
+        <span style="cursor: pointer;" class="comment-action reject-comment" data-id="{{ comment.id }}">
+          <img src="/images/reject.png"> 
         </span>
         {% endif %}
 
-        {% if comment.pinned %}
-        <span title="{{ _('unpin comment') }}" style="cursor: pointer;" class="comment-action unpin-comment" data-id="{{ comment.id }}">
-          <img src="/images/unpin_icon.png"> 
-        </span>
-        {% else %}
-        <span title="{{ _('pin comment') }}" style="cursor: pointer;" class="comment-action pin-comment" data-id="{{ comment.id }}">
-          <img src="/images/pin_icon.png"> 
-        </span>
+        {% if comment.approved %}
+          {% if comment.hidden %}
+          <span title="{{ _('unhide comment') }}" style="cursor: pointer;" class="comment-action unhide-comment" data-id="{{ comment.id }}">
+            <img src="/images/view_icon.png"> 
+          </span>
+          {% else %}
+          <span title="{{ _('hide comment') }}" style="cursor: pointer;" class="comment-action hide-comment" data-id="{{ comment.id }}">
+            <img src="/images/hide_icon.png"> 
+          </span>
+          {% endif %}
+
+          {% if comment.pinned %}
+          <span title="{{ _('unpin comment') }}" style="cursor: pointer;" class="comment-action unpin-comment" data-id="{{ comment.id }}">
+            <img src="/images/unpin_icon.png"> 
+          </span>
+          {% else %}
+          <span title="{{ _('pin comment') }}" style="cursor: pointer;" class="comment-action pin-comment" data-id="{{ comment.id }}">
+            <img src="/images/pin_icon.png"> 
+          </span>
+          {% endif %}
         {% endif %}
+      </div>
       {% endif %}
-    </div>
     {% endif %}
   </td>
   <td>
