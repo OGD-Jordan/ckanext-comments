@@ -63,11 +63,13 @@
     {% endblock %}
 
     {% block save_button %}
-    <a 
-      class="btn btn-secondary" 
-      href="{{ h.url_for(comments_list_route) }}">
-        {{ _('Back') }}
-    </a>
+    <button 
+      class="btn btn-secondary pull-right mb-2"
+      type="button"
+      onclick="window.history.back()" 
+    >
+      {{ _('Back') }}
+    </button>
 
     {% if comment.state != 'approved' %}
       <button 
