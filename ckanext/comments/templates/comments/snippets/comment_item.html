@@ -9,6 +9,16 @@
     <a href="{{ h.url_for('dataset.read', id=comment.package.id) }}">{{ comment.package.display_name }}</a>
   </td>
   <td> {{comment.author.fullname or comment.author.name}}</td>
+  <td>
+    {% if h.check_access('end_user_dashboard_view_auth', {'id': comment.author.name} ) %}
+      <a href="{{ h.url_for('ogddashboard.end_user', id=comment.author.name) }}">
+        {{comment.author.fullname or comment.author.name}}
+      </a>
+    {% else %}
+    {{comment.author.fullname or comment.author.name}}
+    {% endif %}
+  </td>
+
   <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
   <td> {{ STATUS_DICT[comment.state] }}</td>
   <td>
@@ -48,6 +58,8 @@
         {% endif %}
       </div>
       {% endif %}
+    {% else %}
+      <p>{{ _('No Actions Available') }}</p>
     {% endif %}
   </td>
   <td>
