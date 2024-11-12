@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-comments 0.3.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-13 11:45+0300\n"
+"POT-Creation-Date: 2024-10-29 14:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,7 @@ msgstr ""
 
 #: ckanext/comments/helpers.py:102 ckanext/comments/templates/comments/edit.html:53
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:71
+#: ckanext/comments/templates/comments/snippets/list.html:12
 msgid "Status"
 msgstr ""
 
@@ -64,21 +65,21 @@ msgstr ""
 msgid "Select Entity"
 msgstr ""
 
-#: ckanext/comments/helpers.py:144
+#: ckanext/comments/helpers.py:144 ckanext/comments/helpers.py:153
 msgid "Pending"
 msgstr ""
 
-#: ckanext/comments/helpers.py:145
+#: ckanext/comments/helpers.py:145 ckanext/comments/helpers.py:154
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:39
 msgid "Approved"
 msgstr ""
 
-#: ckanext/comments/helpers.py:146
+#: ckanext/comments/helpers.py:146 ckanext/comments/helpers.py:155
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:27
 msgid "Approved Anonymous"
 msgstr ""
 
-#: ckanext/comments/helpers.py:147
+#: ckanext/comments/helpers.py:147 ckanext/comments/helpers.py:156
 msgid "Rejected"
 msgstr ""
 
@@ -205,17 +206,17 @@ msgstr ""
 msgid "Author name"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:69
+#: ckanext/comments/templates/comments/edit.html:71
 msgid "Back"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:79
+#: ckanext/comments/templates/comments/edit.html:81
 #: ckanext/comments/templates/comments/snippets/comment.html:37
 #: ckanext/comments/templates/comments/snippets/comment.html:39
 msgid "Approve"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:90
+#: ckanext/comments/templates/comments/edit.html:92
 msgid "Approve Anonymous"
 msgstr ""
 
@@ -301,7 +302,6 @@ msgstr ""
 
 #: ckanext/comments/templates/comments/snippets/comment.html:51
 #: ckanext/comments/templates/comments/snippets/comment.html:53
-#: ckanext/comments/templates/comments/snippets/comment_form.html:15
 msgid "Save"
 msgstr ""
 
@@ -329,23 +329,31 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:27
+#: ckanext/comments/templates/comments/snippets/comment_form.html:15
+msgid "Post"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:39
 msgid "unhide comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:31
+#: ckanext/comments/templates/comments/snippets/comment_item.html:43
 msgid "hide comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:37
+#: ckanext/comments/templates/comments/snippets/comment_item.html:49
 msgid "unpin comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:41
+#: ckanext/comments/templates/comments/snippets/comment_item.html:53
 msgid "pin comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:51
+#: ckanext/comments/templates/comments/snippets/comment_item.html:61
+msgid "No Actions Available"
+msgstr ""
+
+#: ckanext/comments/templates/comments/snippets/comment_item.html:66
 msgid "More Details"
 msgstr ""
 
@@ -400,11 +408,11 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/list.html:12
+#: ckanext/comments/templates/comments/snippets/list.html:13
 msgid "Actions"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/list.html:35
+#: ckanext/comments/templates/comments/snippets/list.html:36
 msgid "View All"
 msgstr ""
 
