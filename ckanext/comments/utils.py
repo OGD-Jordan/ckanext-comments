@@ -69,7 +69,7 @@ def check_status_update_view_auth(id):
     }
 
     try:
-        tk.check_access('comments_comment_show', context)
+        tk.check_access('comments_comment_show', context, {'id':id})
     except tk.NotAuthorized:
         return tk.abort(
             401,

@@ -90,7 +90,7 @@ def index():
 
 
 class StatusUpdate(MethodView):
-    def _prepare(self) -> Context:
+    def _prepare(self, id) -> Context:
         utils.check_status_update_view_auth(id)
         context = cast(Context, {
             u'model': model,
@@ -107,7 +107,7 @@ class StatusUpdate(MethodView):
             errors: Optional[dict[str, Any]] = None,
             error_summary: Optional[dict[str, Any]] = None
             ) -> Union[Response, str]:
-        context = self._prepare()
+        context = self._prepare(id)
 
         req_comment = _get_action(u'comments_comment_show')(context, {u'id': id})
         data = {**req_comment, **(data or {})}
@@ -130,7 +130,7 @@ class StatusUpdate(MethodView):
         )
 
     def post(self, id):
-        context = self._prepare()
+        context = self._prepare(id)
 
         data_dict = _clean_dict(
             dict_fns.unflatten(

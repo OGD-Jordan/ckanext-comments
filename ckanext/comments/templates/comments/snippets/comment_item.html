@@ -21,7 +21,7 @@
   <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
   <td> {{ STATUS_DICT[comment.state] }}</td>
   <td>
-    {% if h.check_access('comments_comment_approve') %}
+    {% if h.check_access('comments_comment_approve', {'id': comment.id}) %}
       {% if comment.state != 'rejected' %}
       <div class="d-flex flex-row comment-actions" style="gap:2px;"> 
         {% if not comment.approved %}
