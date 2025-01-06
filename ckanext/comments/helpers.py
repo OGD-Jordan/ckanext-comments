@@ -129,11 +129,11 @@ def comment_metatdata(comment):
 @helper
 def entity_options():
     context = {'user': tk.c.user}
-    data_dict = {'all_fields': True, "include_extras": True, 'limit':1000 }
-    orgs = tk.get_action('organization_list')(context, data_dict)
+    data_dict = { }
+    orgs = tk.get_action('organization_list_as_options')(context, data_dict)
     return [(_('Select Entity'), '')] + [
         (h.truncate(org['display_name'], 25), org['id']) 
-        for org in orgs if org['state'] == 'active'
+        for org in orgs
         ]
 
 
