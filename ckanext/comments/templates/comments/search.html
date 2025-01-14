@@ -31,7 +31,7 @@
     snippet 'comments/snippets/comments_search_form.html', 
     placeholder=_('Search comments...'), 
     query=data_dict.q, 
-    entity_selected=data_dict.organization_id, 
+    entity_selected=data_dict.organization_id or '', 
     entity_options=h.comments_entity_options(), 
     status_options=h.comments_status_options(), 
     status_selected= data_dict.state,
