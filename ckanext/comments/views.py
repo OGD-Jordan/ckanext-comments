@@ -146,8 +146,6 @@ class StatusUpdate(MethodView):
         try:
             if action == 'approved': 
                 req_comment = tk.get_action('comments_comment_approve')(context, data_dict)
-            elif action == 'approved_anonymous':
-                req_comment = tk.get_action('comments_comment_approve_anonymous')(context, data_dict)
 
         except tk.ValidationError as e:
             errors = e.error_dict

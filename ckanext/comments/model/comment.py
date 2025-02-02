@@ -33,7 +33,6 @@ class Comment(Base):
     class State:
         draft = "draft"
         approved = "approved"
-        approved_anonymous = "approved_anonymous"
         rejected = "rejected"
 
     id = Column(Text, primary_key=True, default=make_uuid)
@@ -47,9 +46,10 @@ class Comment(Base):
 
     state = Column(Text, nullable=False, default=State.draft)
     
-    # TODO: ADD in Migration
     pinned = Column(Boolean, nullable=True, default=False)
     hidden = Column(Boolean, nullable=True, default=False)
+
+    anonymous = Column(Boolean, nullable=True, default=False)
 
     reply_to_id = Column(Text, ForeignKey(id), nullable=True, index=True)
 
@@ -93,14 +93,10 @@ class Comment(Base):
     def approve(self) -> None:
         self.state = self.State.approved
 
-    def approve_anonymous(self) -> None:
-        self.state = self.State.approved_anonymous
 
     def is_approved(self) -> bool:
-        return self.state in [self.State.approved, self.State.approved_anonymous]  # type: ignore
+        return self.state == self.State.approved  # type: ignore
 
-    def is_approved_anonymous(self) -> bool:
-        return self.state == self.State.approved_anonymous  # type: ignore
 
     def is_hidden(self) -> bool:
         return self.hidden
@@ -252,17 +248,6 @@ class Comment(Base):
         
 
         # Breakdown by Packages
-        # package_comment_breakdown = Session.query(
-        #     func.count(case([(Comment.id == None, 1)], else_=None)).label('no_comments'),
-        #     func.count(case([(Comment.id != None, 1)], else_=None)).label('with_comments')
-        # ).outerjoin(Thread, (Thread.subject_id == model.Package.id) & (Thread.subject_type == 'package')) \
-        # .outerjoin(Comment, Thread.id == Comment.thread_id) \
-        # .one()
-
-        # package_comment_breakdown = {
-        #     'no_comments': package_comment_breakdown.no_comments,
-        #     'with_comments': package_comment_breakdown.with_comments
-        # }
 
         with_comments = Session.query(model.Package) \
             .filter(model.Package.type == 'dataset')\

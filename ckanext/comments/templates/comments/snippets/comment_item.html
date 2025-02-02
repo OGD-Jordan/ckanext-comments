@@ -18,6 +18,8 @@
     {% endif %}
   </td>
 
+  <td>{{ comment.anonymous or False }}</td>
+
   <td style="width: 35%; max-width: 40%;">{{ comment.content|truncate(80) }}</td>
   <td> {{ STATUS_DICT[comment.state] }}</td>
   <td>

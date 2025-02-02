@@ -13,7 +13,7 @@ ckan.module("comments-thread", function ($) {
         "click",
         this._onRemoveComment
       );
-      
+
       this.$(".comment-actions .pin-comment").on(
         "click",
         this._onPinComment
@@ -39,10 +39,7 @@ ckan.module("comments-thread", function ($) {
         "click",
         this._onApproveComment
       );
-      this.$(".comment-actions .approve-comment-anonymous").on(
-        "click",
-        this._onApproveCommentAnonymous
-      );
+
       this.$(".comment-actions .reply-to-comment").on(
         "click",
         this._onReplyToComment
@@ -51,6 +48,7 @@ ckan.module("comments-thread", function ($) {
       this.$(".comment-actions .save-comment").on("click", this._onSaveComment);
       this.$(".comment-footer").on("click", this._onFooterClick);
       this.$(".comment-form").off("submit").on("submit", this._onSubmit);
+      this.$(".post-anonymous").on("click", this._onSubmitAnonymous);
     },
     teardown: function () {
       this.$(".comment-action.remove-comment").off(
@@ -217,25 +215,7 @@ ckan.module("comments-thread", function ($) {
         }
       );
     },
-    _onApproveCommentAnonymous: function (e) {
-      var id = e.currentTarget.dataset.id;
-      var ajaxReload = this.options.ajaxReload;
 
-      this.sandbox.client.call(
-        "POST",
-        "comments_comment_approve_anonymous",
-        {
-          id: id,
-        },
-        function () {
-            if (ajaxReload) {
-                $(document).trigger("comments:changed");
-            } else {
-                window.location.reload();
-            }
-        }
-      );
-    },
     _disableActiveReply: function () {
       $(".comment .reply-textarea-wrapper").remove();
     },
@@ -328,6 +308,18 @@ ckan.module("comments-thread", function ($) {
         }
       );
     },
+    _onSubmitAnonymous: function (e) {
+      e.preventDefault();
+      var content = this.$("#comment-content").val();
+      if (!content) return;
+  
+      this._saveComment({
+        content: content,
+        create_thread: true,
+        anonymous: true
+      });
+    },
+    
     _onSubmit: function (e) {
       e.preventDefault();
       var data = new FormData(e.target);

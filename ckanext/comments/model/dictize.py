@@ -76,7 +76,7 @@ def thread_dictize(obj: Thread, context: Any) -> dict[str, Any]:
             query = query.options(joinedload(Comment.user))
 
         approved_filter = and_(
-            Comment.state.in_([Comment.State.approved, Comment.State.approved_anonymous]),
+            Comment.state.in_([Comment.State.approved]),
             Comment.hidden != True
         )
         user = model.User.get(context["user"])
@@ -108,7 +108,6 @@ def thread_dictize(obj: Thread, context: Any) -> dict[str, Any]:
 
 def comment_dictize(obj: Comment, context: Any, **extra: Any) -> dict[str, Any]:
     extra["approved"] = obj.is_approved()
-    extra["approved_anonymous"] = obj.is_approved_anonymous()
 
     
     subject = obj.thread.get_subject()

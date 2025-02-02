@@ -166,6 +166,7 @@ def comment_create(context, data_dict):
         extras=data_dict["extras"],
         author_id=author_id,
         reply_to_id=reply_to_id,
+        anonymous= data_dict.get('anonymous')
     )
 
     author = comment.get_author()
@@ -220,13 +221,6 @@ def comment_reject(context, data_dict):
     tk.check_access("comments_comment_approve", context, data_dict)
     return patch_comment(context, data_dict, {'state': Comment.State.rejected})
     
-
-@action
-@validate(schema.comment_approve)
-def comment_approve_anonymous(context, data_dict):
-    tk.check_access("comments_comment_approve", context, data_dict)
-    return patch_comment(context, data_dict, {'state': Comment.State.approved_anonymous})
-
 
 def patch_comment(context, data_dict, updated_dict):
 

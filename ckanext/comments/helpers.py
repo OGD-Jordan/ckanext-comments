@@ -143,7 +143,6 @@ def status_options():
         {'text': ('Select State'), 'value': ''},
         {'text': _('Pending'), 'value': 'draft'},
         {'text': _('Approved'), 'value': 'approved'},
-        {'text': _('Approved Anonymous'), 'value': 'approved_anonymous'},
         {'text': _('Rejected'), 'value': 'rejected'},
         ]
 
@@ -152,6 +151,5 @@ def status_dict():
     return {
         'draft': _('Pending'),
         'approved': _('Approved'),
-        'approved_anonymous': _('Approved Anonymous'),
         'rejected': _('Rejected')
     }

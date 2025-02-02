@@ -82,19 +82,6 @@
         </button>
       {% endif %}
 
-    {% if comment.state != 'approved_anonymous' %}
-      <button 
-        class="btn btn-danger mx-1" 
-        type="submit" 
-        name="status_update" 
-        value='approved_anonymous'
-        >
-            {{ _('Approve Anonymous') }}
-        </button>
-      {% endif  %}
-
-
-
     {% endblock %}
   </div>
   {% endblock %}

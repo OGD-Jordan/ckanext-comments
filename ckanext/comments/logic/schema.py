@@ -52,6 +52,7 @@ def comment_create(
             tk.get_validator("comments_comment_exists"),
         ],
         "create_thread": [default(False), boolean_validator],
+        "anonymous": [default(False), boolean_validator],
         "extras": [default("{}"), convert_to_json_if_string, dict_only],
     }
 

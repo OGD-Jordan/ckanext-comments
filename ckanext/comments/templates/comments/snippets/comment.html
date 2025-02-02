@@ -6,7 +6,7 @@
     <div class="comment-heading">
         <div class="comment-authored">
             <div class="author-avatar">
-                {% if comment.approved_anonymous %}
+                {% if comment.anonymous %}
                     {{ h.comments_annonymouse_image(size=26) }}
                 {% else %}
                     {{ h.user_image(comment.author.name, size=26) }}
@@ -15,7 +15,7 @@
 
             <div class="comment-meta">
                 <div class="author-name">
-                    {% if comment.approved_anonymous %}
+                    {% if comment.anonymous %}
                         {{ _("Anonymous User") }}
                     {% else %}
                         {{ comment.author.fullname or comment.author.name }}
@@ -37,10 +37,6 @@
                 <button aria-label="approve comment" title="{{ _('Approve') }}" class="btn btn-success comment-action approve-comment" data-id="{{ comment.id }}">
                     <i class="fa fa-check"></i>
                     <span class="text">{{ _('Approve') }}</span>
-                </button>
-                <button aria-label="approve comment" title="{{ _('Anonymous') }}" class="btn btn-success comment-action approve-comment-anonymous" data-id="{{ comment.id }}">
-                    <i class="fa fa-check"></i>
-                    <span class="text">{{ _('Anonymous') }}</span>
                 </button>
             {% endif %}
             {% if h.check_access('comments_comment_update', comment) %}
