@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ckanext-comments 0.3.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-03-02 15:45+0500\n"
-"PO-Revision-Date: 2025-03-03 17:00+0500\n"
+"PO-Revision-Date: 2025-03-02 15:45+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ar\n"
 "Language-Team: ar <LL@li.org>\n"
@@ -23,135 +23,135 @@ msgstr ""
 #: ckanext/comments/helpers.py:78
 #: ckanext/comments/templates/comments/snippets/comment.html:19
 msgid "Anonymous User"
-msgstr ""
+msgstr "مستخدم مجهول"
 
 #: ckanext/comments/helpers.py:85
 #: ckanext/comments/templates/comments/snippets/list.html:9
 msgid "Dataset"
-msgstr ""
+msgstr "مجموعة البيانات"
 
 #: ckanext/comments/helpers.py:91
 #: ckanext/comments/templates/comments/edit.html:49
 msgid "Author"
-msgstr ""
+msgstr "المعلق"
 
 #: ckanext/comments/helpers.py:96
 #: ckanext/comments/templates/comments/edit.html:50
 msgid "Government Entity"
-msgstr ""
+msgstr "الجهة الحكومية"
 
 #: ckanext/comments/helpers.py:102
 #: ckanext/comments/templates/comments/edit.html:53
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:71
 #: ckanext/comments/templates/comments/snippets/list.html:13
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: ckanext/comments/helpers.py:107
 #: ckanext/comments/templates/comments/edit.html:54
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:43
 msgid "Hidden"
-msgstr ""
+msgstr "مخفي"
 
 #: ckanext/comments/helpers.py:112
 #: ckanext/comments/templates/comments/edit.html:55
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:54
 msgid "Pinned"
-msgstr ""
+msgstr "مثبت"
 
 #: ckanext/comments/helpers.py:117
 #: ckanext/comments/templates/comments/edit.html:57
 #: ckanext/comments/templates/comments/snippets/comment_form.html:10
 msgid "Content"
-msgstr ""
+msgstr "محتوى"
 
 #: ckanext/comments/helpers.py:122
 msgid "Date Created"
-msgstr ""
+msgstr "تاريخ الإنشاء"
 
 #: ckanext/comments/helpers.py:134
 msgid "Select Government Entity"
-msgstr ""
+msgstr "حدد الجهة الحكومية"
 
 #: ckanext/comments/helpers.py:144 ckanext/comments/helpers.py:152
 msgid "Pending"
-msgstr ""
+msgstr "قيد الانتظار"
 
 #: ckanext/comments/helpers.py:145 ckanext/comments/helpers.py:153
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:28
 msgid "Approved"
-msgstr ""
+msgstr "موافقة"
 
 #: ckanext/comments/helpers.py:146 ckanext/comments/helpers.py:154
 msgid "Rejected"
-msgstr ""
+msgstr "مرفوض"
 
 #: ckanext/comments/utils.py:60 ckanext/comments/utils.py:76
 msgid "User not authorized to see the comments"
-msgstr ""
+msgstr "المستخدم غير مصرح له برؤية التعليقات"
 
 #: ckanext/comments/logic/action.py:205 ckanext/comments/logic/action.py:234
 #: ckanext/comments/logic/action.py:291 ckanext/comments/logic/action.py:320
 #: ckanext/comments/utils.py:80 ckanext/comments/utils.py:96
 msgid "Comment not found"
-msgstr ""
+msgstr "لم يتم العثورعلى التعليق"
 
 #: ckanext/comments/utils.py:98
 msgid "Unauthorized to view Comment"
-msgstr ""
+msgstr "غير مصرح له بمشاهدة التعليق"
 
 #: ckanext/comments/assets/js/comments-thread.js:234
 #: ckanext/comments/templates/comments/snippets/comment.html:31
 #: ckanext/comments/templates/comments/snippets/comment.html:33
 msgid "Reply"
-msgstr ""
+msgstr "رد"
 
 #: ckanext/comments/assets/js/comments-thread.js:237
 #: ckanext/comments/templates/comments/snippets/confirmation.html:21
 msgid "Cancel"
-msgstr ""
+msgstr "الغاء"
 
 #: ckanext/comments/assets/js/comments-thread.js:302
 msgid "An Error Occurred"
-msgstr ""
+msgstr "حدث خطأ"
 
 #: ckanext/comments/assets/js/comments-thread.js:303
 msgid "Comment cannot be updated"
-msgstr ""
+msgstr "لا يمكن تحديث التعليق"
 
 #: ckanext/comments/logic/action.py:174
 msgid "Cannot find author for comment"
-msgstr ""
+msgstr "لا يمكن العثورعلى المعلق"
 
 #: ckanext/comments/logic/validators.py:27
 msgid "Comment does not exist"
-msgstr ""
+msgstr "التعليق غير موجود"
 
 #: ckanext/comments/logic/validators.py:37
 #, python-format
 msgid "%s: %s with id: %s"
-msgstr ""
+msgstr "%s: %s مع المعرف: %s"
 
 #: ckanext/comments/logic/validators.py:37
 msgid "Not found"
-msgstr ""
+msgstr "لم يتم العثور عليه"
 
 #: ckanext/comments/logic/validators.py:37
 msgid "Organization"
-msgstr ""
+msgstr "جهة حكومية"
 
 #: ckanext/comments/logic/validators.py:48
 #, python-format
 msgid "Invalid state: %s."
-msgstr ""
+msgstr ".%s :حالة غير مصرح بها"
 
 #: ckanext/comments/logic/validators.py:57
 msgid "Invalid user id."
-msgstr ""
+msgstr ".معرف المستخدم لم يتم تعريفه"
 
 #: ckanext/comments/logic/validators.py:63
 msgid "User not authorized filter comments based on author."
-msgstr ""
+msgstr ".المستخدم غير مصرح له بتحديد معاييرالبحث للتعليقات وفقا للمعلق"
 
 #: ckanext/comments/templates/comments/detail.html:8
 #: ckanext/comments/templates/comments/detail.html:11
@@ -165,102 +165,102 @@ msgstr ""
 #: ckanext/comments/templates/comments/search.html:15
 #: ckanext/comments/templates/comments/snippets/thread.html:15
 msgid "Comments"
-msgstr ""
+msgstr "تعليقات"
 
 #: ckanext/comments/templates/comments/detail.html:20
 msgid "Manage"
-msgstr ""
+msgstr "إدارة"
 
 #: ckanext/comments/templates/comments/detail.html:25
 msgid "Comment Details"
-msgstr ""
+msgstr "تفاصيل التعليق"
 
 #: ckanext/comments/templates/comments/detail.html:30
 #: ckanext/comments/templates/comments/snippets/list.html:12
 msgid "Comment"
-msgstr ""
+msgstr "تعليق"
 
 #: ckanext/comments/templates/comments/detail.html:35
 msgid "Comment info"
-msgstr ""
+msgstr "معلومات التعليق"
 
 #: ckanext/comments/templates/comments/edit.html:19
 msgid "Status Update"
-msgstr ""
+msgstr "تحديث الحالة"
 
 #: ckanext/comments/templates/comments/edit.html:22
 #: ckanext/comments/templates/comments/edit.html:35
 msgid "Comment Status Update"
-msgstr ""
+msgstr "تحديث حالة التعليق"
 
 #: ckanext/comments/templates/comments/edit.html:31
 msgid "View"
-msgstr ""
+msgstr "عرض"
 
 #: ckanext/comments/templates/comments/edit.html:41
 msgid "Update Comment Status"
-msgstr ""
+msgstr "تحديث حالة التعليق"
 
 #: ckanext/comments/templates/comments/edit.html:48
 msgid "Dataset Name"
-msgstr ""
+msgstr "اسم مجموعة البيانات"
 
 #: ckanext/comments/templates/comments/edit.html:49
 msgid "Author name"
-msgstr ""
+msgstr "اسم المعلق"
 
 #: ckanext/comments/templates/comments/edit.html:71
 msgid "Back"
-msgstr ""
+msgstr "خلف"
 
 #: ckanext/comments/templates/comments/edit.html:81
 #: ckanext/comments/templates/comments/snippets/comment.html:37
 #: ckanext/comments/templates/comments/snippets/comment.html:39
 msgid "Approve"
-msgstr ""
+msgstr "موافق"
 
 #: ckanext/comments/templates/comments/edit_base.html:20
 #: ckanext/comments/templates/comments/snippets/comment.html:43
 #: ckanext/comments/templates/comments/snippets/comment.html:45
 msgid "Edit"
-msgstr ""
+msgstr "يحرر"
 
 #: ckanext/comments/templates/comments/edit_base.html:23
 #: ckanext/comments/templates/comments/edit_base.html:42
 msgid "Update Status"
-msgstr ""
+msgstr "تحديث الحالة"
 
 #: ckanext/comments/templates/comments/edit_base.html:36
 msgid "View Comment"
-msgstr ""
+msgstr "عرض التعليق"
 
 #: ckanext/comments/templates/comments/search.html:19
 msgid "Comments on datasets"
-msgstr ""
+msgstr "تعليقات على مجموعات البيانات"
 
 #: ckanext/comments/templates/comments/search.html:25
 msgid "Last Created"
-msgstr ""
+msgstr "آخر إنشاء"
 
 #: ckanext/comments/templates/comments/search.html:26
 msgid "Comment Ascending"
-msgstr ""
+msgstr "ترتيب تصاعدي وفقا للتعليق"
 
 #: ckanext/comments/templates/comments/search.html:27
 msgid "Comment Descending"
-msgstr ""
+msgstr "ترتيب  تنازلي وفقا للتعليق"
 
 #: ckanext/comments/templates/comments/search.html:32
 msgid "Search comments..."
-msgstr ""
+msgstr "...بحث في التعليقات"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:5
 msgid "Filter By"
-msgstr ""
+msgstr "حدد معاييرالبحث"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:12
 msgid "Clear Status"
-msgstr ""
+msgstr "مسح معياربحث الحالة"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:16
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:30
@@ -268,94 +268,94 @@ msgstr ""
 #: ckanext/comments/templates/comments/snippets/confirmation.html:22
 #: ckanext/comments/templates/comments/snippets/confirmation.html:23
 msgid "Remove"
-msgstr ""
+msgstr "إزالة"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:27
 msgid "Clear Date"
-msgstr ""
+msgstr "مسح معيار بحث التاريخ"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:41
 msgid "Clear Entity"
-msgstr ""
+msgstr "مسح معياربحث الجهة الحكومية"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:57
 msgid "Clear Filters"
-msgstr ""
+msgstr "مسح معاييرالبحث"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:92
 msgid "After Date"
-msgstr ""
+msgstr "بعد تاريخ"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:126
 msgid "Order By"
-msgstr ""
+msgstr "ترتيب حسب"
 
 #: ckanext/comments/templates/comments/snippets/comment.html:47
 #: ckanext/comments/templates/comments/snippets/comment.html:49
 msgid "Save"
-msgstr ""
+msgstr "حفظ"
 
 #: ckanext/comments/templates/comments/snippets/comment.html:56
 #: ckanext/comments/templates/comments/snippets/comment.html:58
 msgid "Unpin"
-msgstr ""
+msgstr "إزالة التثبيت"
 
 #: ckanext/comments/templates/comments/snippets/comment.html:61
 #: ckanext/comments/templates/comments/snippets/comment.html:63
 msgid "Pin"
-msgstr ""
+msgstr "تثبيت"
 
 #: ckanext/comments/templates/comments/snippets/comment.html:68
 #: ckanext/comments/templates/comments/snippets/comment.html:70
 msgid "Unhide"
-msgstr ""
+msgstr "إظهار"
 
 #: ckanext/comments/templates/comments/snippets/comment.html:73
 #: ckanext/comments/templates/comments/snippets/comment.html:75
 msgid "Hide"
-msgstr ""
+msgstr "إخفاء"
 
 #: ckanext/comments/templates/comments/snippets/comment_form.html:9
 msgid "Leave a comment"
-msgstr ""
+msgstr "اترك تعليقا"
 
 #: ckanext/comments/templates/comments/snippets/comment_form.html:15
 msgid "Post"
-msgstr ""
+msgstr "منشور"
 
 #: ckanext/comments/templates/comments/snippets/comment_form.html:18
 msgid "Post Anonymous"
-msgstr ""
+msgstr "منشور مجهول"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:41
 msgid "unhide comment"
-msgstr ""
+msgstr "إظهار التعليق"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:45
 msgid "hide comment"
-msgstr ""
+msgstr "إخفاء التعليق"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:51
 msgid "unpin comment"
-msgstr ""
+msgstr "إزالة تثبيت التعليق"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:55
 msgid "pin comment"
-msgstr ""
+msgstr "تثبيت التعليق"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:63
 msgid "No Actions Available"
-msgstr ""
+msgstr "لا توجد إجراءات متاحة"
 
 #: ckanext/comments/templates/comments/snippets/comment_item.html:68
 msgid "More Details"
-msgstr ""
+msgstr "مزيد من التفاصيل"
 
 #: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:2
 msgid "{number} comment found for '{query}'"
 msgid_plural "{number} comments found for '{query}'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{number} تم العثور على تعليق '{query}'"
+msgstr[1] "{number} تم العثور على تعليقات '{query}'"
 msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
@@ -363,13 +363,13 @@ msgstr[5] ""
 
 #: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:3
 msgid "No comments found for '{query}'"
-msgstr ""
+msgstr "لم يتم العثور على تعليقات '{query}'"
 
 #: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:4
 msgid "{number} comment found"
 msgid_plural "{number} comments found"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{number} تم العثور على تعليق"
+msgstr[1] "{number} تم العثور على تعليقات"
 msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
@@ -377,19 +377,19 @@ msgstr[5] ""
 
 #: ckanext/comments/templates/comments/snippets/comments_search_result_text.html:5
 msgid "No comments found"
-msgstr ""
+msgstr "لم يتم العثور على تعليقات"
 
 #: ckanext/comments/templates/comments/snippets/confirmation.html:12
 msgid "Confirmation window"
-msgstr ""
+msgstr "نافذة التأكيد"
 
 #: ckanext/comments/templates/comments/snippets/confirmation.html:18
 msgid "Are you sure you want to permanently delete this comment?"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد حذف هذا التعليق نهائيًا؟"
 
 #: ckanext/comments/templates/comments/snippets/helper.html:4
 msgid "What are Comments?"
-msgstr ""
+msgstr "ما هي التعليقات؟"
 
 #: ckanext/comments/templates/comments/snippets/helper.html:8
 msgid ""
@@ -401,45 +401,45 @@ msgid ""
 "quality and ensure the information is as useful and relevant as possible."
 " Start a conversation and contribute to the ongoing improvement of open "
 "data."
-msgstr ""
+msgstr "تتيح ميزة التعليق للمستخدمين التفاعل مع ناشري مجموعات البيانات والمجتمع من خلال مشاركة الملاحظات أو الاقتراحات أو الأسئلة مباشرة على صفحات مجموعات البيانات. سواء كنت ترغب في توضيح تفاصيل مجموعة البيانات، أو تسليط الضوء على تحسينات محتملة، أو مناقشة سيناريوهات الاستخدام، توفر هذه الميزة مساحة للمناقشات التعاونية.تساعد التعليقات في تحسين جودة مجموعات البيانات وضمان أن تكون المعلومات مفيدة وذات صلة قدر الإمكان ابدأ محادثة وساهم في التحسين المستمر للبيانات المفتوحة"
 
 #: ckanext/comments/templates/comments/snippets/list.html:8
 msgid "Date"
-msgstr ""
+msgstr "تاريخ"
 
 #: ckanext/comments/templates/comments/snippets/list.html:10
 msgid "User"
-msgstr ""
+msgstr "المستخدم"
 
 #: ckanext/comments/templates/comments/snippets/list.html:11
 msgid "Anonymous"
-msgstr ""
+msgstr "مجهول"
 
 #: ckanext/comments/templates/comments/snippets/list.html:14
 msgid "Actions"
-msgstr ""
+msgstr "الإجراءات"
 
 #: ckanext/comments/templates/comments/snippets/list.html:37
 msgid "View All"
-msgstr ""
+msgstr "عرض الكل"
 
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:6
 msgid "Total"
-msgstr ""
+msgstr "المجموع"
 
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:16
 msgid "Draft/Pending"
-msgstr ""
+msgstr "مسودة/قيد الانتظار"
 
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:38
 msgid "Statistics According To Internal Actions"
-msgstr ""
+msgstr "إحصائيات الإجراءات الداخلية"
 
 #: ckanext/comments/templates/comments/snippets/user_info.html:4
 msgid "User Information"
-msgstr ""
+msgstr "معلومات المستخدم"
 
 #: ckanext/comments/templates/comments/snippets/user_info.html:12
 msgid "Submitted on"
-msgstr ""
+msgstr "تم تقديمه بتاريخ"
 
