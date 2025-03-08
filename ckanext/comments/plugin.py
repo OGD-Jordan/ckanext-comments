@@ -16,6 +16,7 @@ except AttributeError:
 
 @config_declarations
 class CommentsPlugin(plugins.SingletonPlugin, DefaultTranslation):
+    plugins.implements(plugins.ITranslation, inherit=True)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IAuthFunctions)
     plugins.implements(plugins.IActions)
