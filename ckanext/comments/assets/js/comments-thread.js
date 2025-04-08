@@ -257,7 +257,8 @@ ckan.module("comments-thread", function ($) {
       this._disableActiveReply();
       this._disableActiveEdit();
       var target = $(e.currentTarget).addClass("hidden");
-      target.parent().find(".save-comment").removeClass("hidden");
+      target.parent().find(".edit-comment").addClass("d-none");
+      target.parent().find(".save-comment").removeClass("d-none");
       var content = target
         .closest(".comment")
         .addClass("edit-in-progress")
@@ -307,6 +308,9 @@ ckan.module("comments-thread", function ($) {
           notify.el = oldEl;
         }
       );
+      target.parent().find(".edit-comment").removeClass("d-none");
+      target.parent().find(".save-comment").addClass("d-none");
+
     },
     _onSubmitAnonymous: function (e) {
       e.preventDefault();

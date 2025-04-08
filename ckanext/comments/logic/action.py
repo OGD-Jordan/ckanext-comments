@@ -319,7 +319,7 @@ def comment_update(context, data_dict):
     if comment is None:
         raise tk.ObjectNotFound(_("Comment not found"))
 
-    comment.patch_comment({
+    comment.patch_comment(**{
         'content': data_dict["content"],
         'state': Comment.State.draft,
         'hidden': comment.hidden or False,
