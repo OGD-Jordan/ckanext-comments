@@ -140,7 +140,7 @@ def entity_options():
 @helper
 def status_options():
     return [
-        {'text': ('Select State'), 'value': ''},
+        {'text': _('Select State'), 'value': ''},
         {'text': _('Pending'), 'value': 'draft'},
         {'text': _('Approved'), 'value': 'approved'},
         {'text': _('Rejected'), 'value': 'rejected'},

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-comments 0.3.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-03-02 15:45+0500\n"
+"POT-Creation-Date: 2025-04-17 17:22+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,31 +28,31 @@ msgstr ""
 msgid "Dataset"
 msgstr ""
 
-#: ckanext/comments/helpers.py:91 ckanext/comments/templates/comments/edit.html:49
+#: ckanext/comments/helpers.py:91 ckanext/comments/templates/comments/edit.html:59
 msgid "Author"
 msgstr ""
 
-#: ckanext/comments/helpers.py:96 ckanext/comments/templates/comments/edit.html:50
+#: ckanext/comments/helpers.py:96 ckanext/comments/templates/comments/edit.html:60
 msgid "Government Entity"
 msgstr ""
 
-#: ckanext/comments/helpers.py:102 ckanext/comments/templates/comments/edit.html:53
+#: ckanext/comments/helpers.py:102 ckanext/comments/templates/comments/edit.html:63
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:71
 #: ckanext/comments/templates/comments/snippets/list.html:13
 msgid "Status"
 msgstr ""
 
-#: ckanext/comments/helpers.py:107 ckanext/comments/templates/comments/edit.html:54
+#: ckanext/comments/helpers.py:107 ckanext/comments/templates/comments/edit.html:64
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:43
 msgid "Hidden"
 msgstr ""
 
-#: ckanext/comments/helpers.py:112 ckanext/comments/templates/comments/edit.html:55
+#: ckanext/comments/helpers.py:112 ckanext/comments/templates/comments/edit.html:65
 #: ckanext/comments/templates/comments/snippets/stats-indicators.html:54
 msgid "Pinned"
 msgstr ""
 
-#: ckanext/comments/helpers.py:117 ckanext/comments/templates/comments/edit.html:57
+#: ckanext/comments/helpers.py:117 ckanext/comments/templates/comments/edit.html:67
 #: ckanext/comments/templates/comments/snippets/comment_form.html:10
 msgid "Content"
 msgstr ""
@@ -63,6 +63,10 @@ msgstr ""
 
 #: ckanext/comments/helpers.py:134
 msgid "Select Government Entity"
+msgstr ""
+
+#: ckanext/comments/helpers.py:143
+msgid "Select State"
 msgstr ""
 
 #: ckanext/comments/helpers.py:144 ckanext/comments/helpers.py:152
@@ -103,11 +107,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ckanext/comments/assets/js/comments-thread.js:302
+#: ckanext/comments/assets/js/comments-thread.js:303
 msgid "An Error Occurred"
 msgstr ""
 
-#: ckanext/comments/assets/js/comments-thread.js:303
+#: ckanext/comments/assets/js/comments-thread.js:304
 msgid "Comment cannot be updated"
 msgstr ""
 
@@ -147,9 +151,9 @@ msgstr ""
 
 #: ckanext/comments/templates/comments/detail.html:8
 #: ckanext/comments/templates/comments/detail.html:11
-#: ckanext/comments/templates/comments/edit.html:12
-#: ckanext/comments/templates/comments/edit.html:17
-#: ckanext/comments/templates/comments/edit.html:21
+#: ckanext/comments/templates/comments/edit.html:22
+#: ckanext/comments/templates/comments/edit.html:27
+#: ckanext/comments/templates/comments/edit.html:31
 #: ckanext/comments/templates/comments/edit_base.html:10
 #: ckanext/comments/templates/comments/edit_base.html:18
 #: ckanext/comments/templates/comments/edit_base.html:22
@@ -176,36 +180,58 @@ msgstr ""
 msgid "Comment info"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:19
+#: ckanext/comments/templates/comments/edit.html:11
+#: ckanext/comments/templates/comments/edit.html:12
+#: ckanext/comments/templates/comments/edit.html:13
+#: ckanext/comments/templates/comments/edit.html:14
+#: ckanext/comments/templates/comments/snippets/comment_item.html:7
+#: ckanext/comments/templates/comments/snippets/comment_item.html:8
+#: ckanext/comments/templates/comments/snippets/comment_item.html:9
+#: ckanext/comments/templates/comments/snippets/comment_item.html:10
+msgid "No"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:15
+#: ckanext/comments/templates/comments/edit.html:16
+#: ckanext/comments/templates/comments/edit.html:17
+#: ckanext/comments/templates/comments/edit.html:18
+#: ckanext/comments/templates/comments/snippets/comment_item.html:11
+#: ckanext/comments/templates/comments/snippets/comment_item.html:12
+#: ckanext/comments/templates/comments/snippets/comment_item.html:13
+#: ckanext/comments/templates/comments/snippets/comment_item.html:14
+msgid "Yes"
+msgstr ""
+
+#: ckanext/comments/templates/comments/edit.html:29
 msgid "Status Update"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:22
-#: ckanext/comments/templates/comments/edit.html:35
+#: ckanext/comments/templates/comments/edit.html:32
+#: ckanext/comments/templates/comments/edit.html:45
 msgid "Comment Status Update"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:31
+#: ckanext/comments/templates/comments/edit.html:41
 msgid "View"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:41
+#: ckanext/comments/templates/comments/edit.html:51
 msgid "Update Comment Status"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:48
+#: ckanext/comments/templates/comments/edit.html:58
 msgid "Dataset Name"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:49
+#: ckanext/comments/templates/comments/edit.html:59
 msgid "Author name"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:71
+#: ckanext/comments/templates/comments/edit.html:81
 msgid "Back"
 msgstr ""
 
-#: ckanext/comments/templates/comments/edit.html:81
+#: ckanext/comments/templates/comments/edit.html:91
 #: ckanext/comments/templates/comments/snippets/comment.html:37
 #: ckanext/comments/templates/comments/snippets/comment.html:39
 msgid "Approve"
@@ -319,27 +345,27 @@ msgstr ""
 msgid "Post Anonymous"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:41
+#: ckanext/comments/templates/comments/snippets/comment_item.html:52
 msgid "unhide comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:45
+#: ckanext/comments/templates/comments/snippets/comment_item.html:56
 msgid "hide comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:51
+#: ckanext/comments/templates/comments/snippets/comment_item.html:62
 msgid "unpin comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:55
+#: ckanext/comments/templates/comments/snippets/comment_item.html:66
 msgid "pin comment"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:63
+#: ckanext/comments/templates/comments/snippets/comment_item.html:74
 msgid "No Actions Available"
 msgstr ""
 
-#: ckanext/comments/templates/comments/snippets/comment_item.html:68
+#: ckanext/comments/templates/comments/snippets/comment_item.html:79
 msgid "More Details"
 msgstr ""
 
