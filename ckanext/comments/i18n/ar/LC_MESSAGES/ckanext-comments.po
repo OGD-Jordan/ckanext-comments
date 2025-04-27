@@ -260,7 +260,7 @@ msgstr "حدد معاييرالبحث"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:12
 msgid "Clear Status"
-msgstr "مسح معياربحث الحالة"
+msgstr "مسح معيار بحث الحالة"
 
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:16
 #: ckanext/comments/templates/comments/snippets/advanced_filtering.html:30
