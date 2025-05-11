@@ -68,18 +68,24 @@
   
   
   {% block form_actions %}
-  <div class="form-actions">
+  <div class="form-actions" style="gap:2px;">
     {% block delete_button %}
     {% endblock %}
 
     {% block save_button %}
-    <button 
-      class="btn btn-secondary pull-right mb-2"
-      type="button"
-      onclick="window.history.back()" 
-    >
-      {{ _('Back') }}
-    </button>
+
+
+      {% if comment.state != 'rejected' %}
+      <button 
+        class="btn btn-danger" 
+        type="submit" 
+        name="status_update" 
+        value='rejected'
+        >
+            {{ _('Reject') }}
+        </button>
+      {% endif %}
+
 
     {% if comment.state != 'approved' %}
       <button 
@@ -91,6 +97,14 @@
             {{ _('Approve') }}
         </button>
       {% endif %}
+
+    <button 
+      class="btn btn-secondary"
+      type="button"
+      onclick="window.history.back()" 
+      >
+        {{ _('Back') }}
+    </button>
 
     {% endblock %}
   </div>

@@ -147,6 +147,10 @@ class StatusUpdate(MethodView):
             if action == 'approved': 
                 req_comment = tk.get_action('comments_comment_approve')(context, data_dict)
 
+            elif action == 'rejected': 
+                req_comment = tk.get_action('comments_comment_reject')(context, data_dict)
+
+
         except tk.ValidationError as e:
             errors = e.error_dict
             error_summary = e.error_summary

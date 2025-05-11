@@ -446,3 +446,6 @@ msgstr "تم تقديمه بتاريخ"
 #: ckanext/comments/helpers.py:143
 msgid "Select State"
 msgstr "اختر الحالة"
+
+msgid "Reject"
+msgstr "رفض"
