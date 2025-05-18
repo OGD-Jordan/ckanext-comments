@@ -449,3 +449,15 @@ msgstr "اختر الحالة"
 
 msgid "Reject"
 msgstr "رفض"
+
+msgid "draft"
+msgstr "مسودة"
+
+msgid "approved"
+msgstr "موافق عليه"
+
+msgid "rejected"
+msgstr "مرفوض"
+
+msgid "False"
+msgstr "خطأ"
