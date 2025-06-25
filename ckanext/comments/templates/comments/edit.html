@@ -75,27 +75,29 @@
     {% block save_button %}
 
 
-      {% if comment.state != 'rejected' %}
-      <button 
-        class="btn btn-danger" 
-        type="submit" 
-        name="status_update" 
-        value='rejected'
-        >
-            {{ _('Reject') }}
-        </button>
-      {% endif %}
+      {% if h.check_access('comments_comment_approve') %}
+        {% if comment.state != 'rejected' %}
+        <button 
+          class="btn btn-danger" 
+          type="submit" 
+          name="status_update" 
+          value='rejected'
+          >
+              {{ _('Reject') }}
+          </button>
+        {% endif %}
 
 
-    {% if comment.state != 'approved' %}
-      <button 
-        class="btn btn-primary" 
-        type="submit" 
-        name="status_update" 
-        value='approved'
-        >
-            {{ _('Approve') }}
-        </button>
+      {% if comment.state != 'approved' %}
+        <button 
+          class="btn btn-primary" 
+          type="submit" 
+          name="status_update" 
+          value='approved'
+          >
+              {{ _('Approve') }}
+          </button>
+        {% endif %}
       {% endif %}
 
     <button 
