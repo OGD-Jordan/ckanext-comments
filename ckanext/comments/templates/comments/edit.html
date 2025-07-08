@@ -103,7 +103,7 @@
     <button 
       class="btn btn-secondary"
       type="button"
-      onclick="window.history.back()" 
+      onclick="window.location.href='{{ h.url_for('comments.index') }}'" 
       >
         {{ _('Back') }}
     </button>
