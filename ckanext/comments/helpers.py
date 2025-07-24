@@ -40,6 +40,7 @@ def thread_for(id_: Optional[str], type_: str) -> dict[str, Any]:
             "combine_comments": True,
             "include_author": True,
             "init_missing": True,
+            "newest_first": True
         },
     )
     return thread

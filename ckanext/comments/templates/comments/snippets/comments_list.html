@@ -13,7 +13,7 @@
       <li class="comments-comment mobile-hidden-comment visible-xs">...</li>
     {% endif %}
     <li class="comments-comment {% if loop.depth > mobile_depth %} hidden-xs{% endif %}">
-      {% snippet 'comments/snippets/comment.html', comment=comment %}
+      {% snippet 'comments/snippets/comment.html', comment=comment, pkg=pkg %}
 	    {% if comment.replies %}
         <ul class="list-unstyled comments-thread">
 		      {{ loop(comment.replies) }}

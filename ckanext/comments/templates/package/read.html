@@ -3,6 +3,6 @@
 {% block primary_content_inner %}
   {{ super() }}
   {% if h.comments_enable_default_dataset_comments() %}
-    {% snippet 'comments/snippets/thread.html', subject_id=pkg.id, subject_type='package' %}
+    {% snippet 'comments/snippets/thread.html', subject_id=pkg.id, subject_type='package', pkg=pkg %}
   {% endif %}
 {% endblock primary_content_inner %}

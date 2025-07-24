@@ -69,6 +69,7 @@ ckan.module("comments-thread", function ($) {
         var content = e.currentTarget.querySelector(
           ".reply-textarea-wrapper textarea"
         ).value;
+        this._disableSubmitButtons(e.target.closest('comment-footer'))
         this._saveComment({
           content: content,
           reply_to_id: e.target.dataset.id,
@@ -317,18 +318,29 @@ ckan.module("comments-thread", function ($) {
       var content = this.$("#comment-content").val();
       if (!content) return;
   
+      this._disableSubmitButtons(e.target)
       this._saveComment({
         content: content,
         create_thread: true,
         anonymous: true
       });
     },
-    
+
     _onSubmit: function (e) {
       e.preventDefault();
       var data = new FormData(e.target);
+      this._disableSubmitButtons(e.target)
       this._saveComment({ content: data.get("content"), create_thread: true });
     },
+
+    _disableSubmitButtons: function (target) {
+      var buttons = $('.btn',target);
+      buttons.each(function (index, button) {
+        button = $(button);
+        button.attr("disabled", true);
+      });
+    },
+
     _saveComment: function (data) {
       if (!data.content) {
         return;
