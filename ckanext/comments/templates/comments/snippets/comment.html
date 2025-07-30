@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="comment-actions">
-            {% if h.check_access('comments_reply_create', {"reply_to_id": comment.id} and pkg.publishing_status == 'passed') %}
+            {% if h.check_access('comments_reply_create', {"reply_to_id": comment.id}) and pkg.publishing_status == 'passed' %}
                 <button aria-label="reply to comment" title="{{ _('Reply') }}" class="btn btn-default comment-action reply-to-comment" data-id="{{ comment.id }}">
                     <i class="fa fa-mail-reply"></i>
                     <span class="text">{{ _('Reply') }}</span>
@@ -39,7 +39,7 @@
                     <span class="text">{{ _('Approve') }}</span>
                 </button>
             {% endif %}
-            {% if h.check_access('comments_comment_update', comment and pkg.publishing_status == 'passed') %}
+            {% if h.check_access('comments_comment_update', comment) and pkg.publishing_status == 'passed' %}
                 <button aria-label="edit comment" title="{{ _('Edit') }}" class="btn btn-default comment-action edit-comment" data-id="{{ comment.id }}">
                     <i class="fa fa-edit"></i>
                     <span class="text">{{ _('Edit') }}</span>
