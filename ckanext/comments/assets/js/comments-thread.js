@@ -69,6 +69,7 @@ ckan.module("comments-thread", function ($) {
         var content = e.currentTarget.querySelector(
           ".reply-textarea-wrapper textarea"
         ).value;
+        if (content.trim() === "")  return;
         this._disableSubmitButtons(e.target.closest('comment-footer'))
         this._saveComment({
           content: content,
@@ -314,16 +315,12 @@ ckan.module("comments-thread", function ($) {
 
     },
     _onSubmitAnonymous: function (e) {
+      var $target = $('.comment-form')[0];
+
       e.preventDefault();
-      var content = this.$("#comment-content").val();
-      if (!content) return;
-  
-      this._disableSubmitButtons(e.target)
-      this._saveComment({
-        content: content,
-        create_thread: true,
-        anonymous: true
-      });
+      var data = new FormData($target);
+      this._disableSubmitButtons($target)
+      this._saveComment({ content: data.get("content"), create_thread: true, anonymous: true });
     },
 
     _onSubmit: function (e) {
