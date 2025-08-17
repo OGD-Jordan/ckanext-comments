@@ -352,11 +352,12 @@ ckan.module("comments-thread", function ($) {
         "comments_comment_create",
         data,
         function () {
-            if (ajaxReload) {
-                $(document).trigger("comments:changed");
-            } else {
-                window.location.reload();
-            }
+          if (ajaxReload) {
+            $(document).trigger("comments:changed");
+          } else {
+            window.location.reload();
+          }
+          $(".comment-form")[0].reset();
         }
       );
     },
