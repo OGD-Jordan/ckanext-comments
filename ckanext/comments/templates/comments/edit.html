@@ -75,7 +75,7 @@
     {% block save_button %}
 
 
-      {% if h.check_access('comments_comment_approve') %}
+      {% if h.check_access('comments_comment_approve', {'id':data.id}) %}
         {% if comment.state != 'rejected' %}
         <button 
           class="btn btn-danger" 
